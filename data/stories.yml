@@ -1,0 +1,185 @@
+version: "2.0"
+stories:
+- story: zoom class 12B
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: zoom_details
+  - action: utter_class
+  - intent: class_sec
+    entities:
+    - class: 12B
+  - slot_was_set:
+    - class: 12B
+  - action: utter_zoom_details
+  - action: show_zoom
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: zoom path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: zoom_details
+    entities:
+    - class: 12D
+  - slot_was_set:
+    - class: 12D
+  - action: utter_zoom_details
+  - action: show_zoom
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: email class 11B
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: email_details
+  - action: utter_class
+  - intent: class_sec
+    entities:
+    - class: 11B
+  - slot_was_set:
+    - class: 11B
+  - action: utter_email_details
+  - action: show_email
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: email path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: email_details
+    entities:
+    - class: 12D
+  - slot_was_set:
+    - class: 12D
+  - action: utter_email_details
+  - action: show_email
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: syllabus class 11A
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: exam_syllabus
+    entities:
+    - class: 11A
+  - slot_was_set:
+    - class: 11A
+  - action: show_syllabus
+  - intent: exam_syllabus
+    entities:
+    - exam: final
+  - slot_was_set:
+    - exam: final
+  - action: show_exam
+  - intent: exam_syllabus
+    entities:
+    - subject: maths
+  - slot_was_set:
+    - subject: maths
+  - action: show_final_11
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: Story from Conversation ID 7121f4e69fe8471cbd87a23baf0a20db
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: exam_syllabus
+    entities:
+    - class: 11A
+  - slot_was_set:
+    - class: 11A
+  - action: show_syllabus
+  - intent: exam_syllabus
+    entities:
+    - exam: final
+  - slot_was_set:
+    - exam: final
+  - action: show_exam
+  - intent: exam_syllabus
+    entities:
+    - subject: cs
+  - slot_was_set:
+    - subject: cs
+  - action: show_final_11
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: Story from Conversation ID 7a9cd00ba5984e45bae45667cb684cc9
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: exam_syllabus
+    entities:
+    - exam: final
+  - action: utter_class
+  - slot_was_set:
+    - exam: final
+  - intent: exam_syllabus
+    entities:
+    - class: '11'
+  - slot_was_set:
+    - exam: final
+  - action: utter_subject_11
+  - intent: exam_syllabus
+    entities:
+    - subject: maths
+  - slot_was_set:
+    - subject: maths
+  - action: show_final_11
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: Story from Conversation ID 75ea4895fce64cc4a790b0b7edffcb2d
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: exam_syllabus
+    entities:
+    - subject: maths
+    - class: '11'
+    - exam: final
+  - slot_was_set:
+    - class: '11'
+  - action: show_final_11
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye
+- story: event path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_ask
+  - intent: upcoming_events
+  - action: utter_event
+  - intent: upcoming_events
+    entities:
+    - event: fest
+  - slot_was_set:
+    - event: fest
+  - action: show_event
+  - action: utter_ask_more
+  - intent: deny
+  - action: utter_end
+  - action: utter_goodbye 

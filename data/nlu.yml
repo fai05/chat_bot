@@ -1,0 +1,253 @@
+version: "2.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - moin
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+    - Hi
+- intent: report_card
+  examples: |
+    - Please show my report card
+    - show me my child's marksheet
+    - Periodic test results
+    - marksheet of half yearly exam
+    - kindly show me final exam report card
+    - is it possible to view my child's report card?
+    - is it possible to view my child's marksheet?
+    - could you send email of report card?
+    - could you send email of mark sheet?
+    - periodic test result
+- intent: goodbye
+  examples: |
+    - good afternoon
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - no thanks
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+- intent: zoom_details
+  examples: |
+    - What is the zoom details of [12A](class)?
+    - What is the zoom details of [12B](class)?
+    - What is the zoom details of [12C](class)?
+    - What is the zoom details of [12D](class)?
+    - What is the zoom details of [12E](class)?
+    - Could you tell me the zoom id for class [11A](class)?
+    - Could you tell me the zoom id for class [11B](class)?
+    - Could you tell me the zoom id for class [11C](class)?
+    - Could you tell me the zoom id for class [11D](class)?
+    - Could you tell me the zoom id for class [11E](class)?
+    - show me my class zoom id
+    - what is the zoom details of class [12D](class)?
+    - zoom id for class [11A](class)
+    - what is the zoom details of [12C](class)?
+    - could you show me zoom ids
+    - show me my class zoom details
+- intent: email_details
+  examples: |
+    - Please tell me the email id of my teachers
+    - could you tell me the email address of teachers of class [11A](class)?
+    - could you tell me the email address of teachers of class [11B](class)?
+    - could you tell me the email address of teachers of class [11C](class)?
+    - could you tell me the email address of teachers of class [11D](class)?
+    - could you tell me the email address of teachers of class [11E](class)?
+    - could you tell me the email address of teachers of class [12A](class)?
+    - could you tell me the email address of teachers of class [12B](class)?
+    - could you tell me the email address of teachers of class [12C](class)?
+    - could you tell me the email address of teachers of class [12D](class)?
+    - could you tell me the email address of teachers of class [12E](class)?
+- intent: exam_syllabus
+  examples: |
+    - What is [preboard](exam) syllabus for [Maths](subject)?
+    - Show me [periodic](exam) test syllabus
+    - class [11A](class) [physics](subject) syllabus for [half yearly](exam)
+    - [final](exam) exam syllabus of class [11](class)
+    - [preboard](exam) syllabus of [phy](subject) class [12](class)
+    - [final](exam) exam syllabus for class [11B](class)
+    - exam syllabus for class [11](class)
+    - exam syllabus for class [12](class)
+    - exam syllabus for class [11A](class)
+    - exam syllabus for class [11B](class)
+    - exam syllabus for class [11C](class)
+    - exam syllabus for class [11D](class)
+    - exam syllabus for class [11E](class)
+    - exam syllabus for class [12A](class)
+    - exam syllabus for class [12B](class)
+    - exam syllabus for class [12C](class)
+    - exam syllabus for class [12D](class)
+    - exam syllabus for class [12E](class)
+    - /exam_syllabus{"exam":"periodic"}
+    - /exam_syllabus{"exam":"final"}
+    - /exam_syllabus{"subject":"cs"}
+    - [final](exam) exam syllabus
+    - [11](class)
+    - /exam_syllabus{"subject":"maths"}
+    - [mathematics](subject) class [11](class) [final](exam) exam syllabus
+    - [math](subject)
+    - [chem](subject)
+    - [chemistry](subject)
+    - [eng](subject)
+    - [english](subject)
+    - [cs](subject)
+    - [computer science](subject)
+    - [comp science](subject)
+    - [compsci](subject)
+    - [periodic](exam)
+    - [periodic test](exam)
+    - [periodic exam](exam)
+    - [half yearly](exam)
+    - [halfyearly](exam)
+    - [half yearly exam](exam)
+    - [final](exam)
+    - [final exam](exam)
+    - [final test](exam)
+    - [preboard](exam)
+    - [pre board](exam)
+    - [mock test](exam)
+    - [mock exam](exam)
+    - [final](exam) exam syllabus for class [11](class)
+    - class [11](class) [physics]{"entity": "subject", "value": "phy"} syllabus
+    - [physics](subject) class [11](class) [final](exam) exam syllabus
+    - [maths](subject) class [11](class) [final](exam) exam syllabus
+    - exam syllabus
+    - exam syllabus for [11B](class)
+- intent: upcoming_events
+  examples: |
+    - could you tell me the upcoming [art competitions](event)
+    - what are the next [mun](event)?
+    - are there any competitions I can participate in?
+    - events i can take part in
+    - upcoming events
+- intent: event_contact
+  examples: |
+    - who can i contact to know more about MUN?
+    - details of roundsquare conference
+    - whom should i ask for more details on founder's day?
+    - which teacher should i ask to know more about sport's day?
+- intent: thank_you
+  examples: |
+    - thanks
+    - thhanku
+    - thank you
+    - thanks alot
+- intent: class_sec
+  examples: |
+    - i am in class [11A](class)
+    - i am in class [11B](class)
+    - i am in class [11C](class)
+    - i am in class [11D](class)
+    - i am in class [11E](class)
+    - i am in class [12A](class)
+    - i am in class [12B](class)
+    - i am in class [12C](class)
+    - i am in class [12D](class)
+    - i am in class [12E](class)
+    - [11A](class)
+    - [11C](class)
+    - [12B](class)
+- synonym: periodic
+  examples: |
+    - periodic test
+    - periodic exam
+- synonym: half yearly
+  examples: |
+    - halfyearly
+    - half yearly exam
+- synonym: final
+  examples: |
+    - final exam
+    - final test
+- synonym: preboard
+  examples: |
+    - pre board
+    - mock test
+    - mock exam
+- synonym: phy
+  examples: |
+    - physics
+- synonym: maths
+  examples: |
+    - mathematics
+    - math
+- synonym: chem
+  examples: |
+    - chemistry
+- synonym: eng
+  examples: |
+    - english
+- synonym: cs
+  examples: |
+    - computer science
+    - compsci
+    - comp science

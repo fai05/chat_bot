@@ -1,0 +1,150 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- mood_great:
+    use_entities: true
+- mood_unhappy:
+    use_entities: true
+- bot_challenge:
+    use_entities: true
+- zoom_details:
+    use_entities: true
+- email_details:
+    use_entities: true
+- exam_syllabus:
+    use_entities: true
+- report_card:
+    use_entities: true
+- upcoming_events:
+    use_entities: true
+- event_contact:
+    use_entities: true
+- thank_you:
+    use_entities: true
+- class_sec:
+    use_entities: true
+entities:
+- class
+- exam
+- subject
+- event
+slots:
+  class:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  exam:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  subject:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  event:
+    type: rasa.shared.core.slots.TextSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+responses:
+  utter_ask:
+  - text: How may I help you?
+  utter_ask_more:
+  - text: Anything else I can help you with?
+  utter_greet:
+  - text: Hey!
+  utter_end:
+  - text: Great! I am here to help you anytime
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_rephrase:
+  - text: Sorry I am unable to understand! Could you please rephrase your question or send an email to xyzinternational.s@gmail.com
+  - text: Sorry I didn't understand! Please try again or send an email to xyzinternational.s@gmail.com
+  utter_class:
+  - text: Kindly mention your class and section.
+  utter_zoom_details:
+  - text: Here are the zoom details for {class}
+  utter_email_details:
+  - text: Here are the email ids of teachers of {class}
+  utter_exam:
+  - buttons:
+    - payload: /exam_syllabus{"exam":"periodic"}
+      title: Periodic Test
+    - payload: /exam_syllabus{"exam":"half yearly"}
+      title: Half Yearly
+    - payload: /exam_syllabus{"exam":"preboard"}
+      title: Preboard
+    - payload: /exam_syllabus{"exam":"final"}
+      title: Final Exam
+    text: Kindly select exam.
+  utter_subject_11:
+  - buttons:
+    - payload: /exam_syllabus{"subject":"maths"}
+      title: Mathematics
+    - payload: /exam_syllabus{"subject":"phy"}
+      title: Physics
+    - payload: /exam_syllabus{"subject":"chem"}
+      title: Chemistry
+    - payload: /exam_syllabus{"subject":"eng"}
+      title: English
+    - payload: /exam_syllabus{"subject":"cs"}
+      title: Computer Science
+    text: Kindly select subject.
+  utter_subject_12:
+  - buttons:
+    - payload: /exam_syllabus{"subject":"maths"}
+      title: Mathematics
+    - payload: /exam_syllabus{"subject":"phy"}
+      title: Physics
+    - payload: /exam_syllabus{"subject":"chem"}
+      title: Chemistry
+    - payload: /exam_syllabus{"subject":"eng"}
+      title: English
+    - payload: /exam_syllabus{"subject":"cs"}
+      title: Computer Science
+    text: Kindly select subject.
+  utter_event:
+  - buttons:
+    - payload: /upcoming_events{"event":"mun"}
+      title: MUN 2021
+    - payload: /upcoming_events{"event":"fest"}
+      title: Talent Fest 2021
+    - payload: /upcoming_events{"event":"quiz"}
+      title: ISQUIZ 2021
+    - payload: /upcoming_events{"event":"art"}
+      title: Art Competition
+    text: Kindly select an event for more info.
+actions:
+- show_zoom
+- show_email
+- show_exam
+- show_syllabus
+- show_final_11
+- show_final_12
+- show_event
+forms: {}
+e2e_actions: []
